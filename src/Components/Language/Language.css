@@ -15,6 +15,7 @@
 
 .flag-img {
   width: 10vw;
+  cursor: pointer;
 }
 
 .flag-img:hover {
