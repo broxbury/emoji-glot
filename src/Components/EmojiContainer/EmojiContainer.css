@@ -1,0 +1,20 @@
+.emoji-display {
+  /* margin-top: 10vh; */
+  /* width: 100vw; */
+  display: flex;
+  justify-content: space-evenly;
+  /* grid-template-columns: repeat(3, 1fr); */
+}
+
+.emoji-title {
+  display: grid;
+  justify-content: center;
+}
+
+.emoji-img {
+  width: 10vw;
+}
+
+.emoji-img:hover {
+  opacity: 80%;
+}

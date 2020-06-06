@@ -1,0 +1,24 @@
+.language-container {
+  /* border: 3px solid red; */
+  /* height: 30vh; */
+}
+
+.language-title {
+  display: grid;
+  justify-content: center;
+}
+
+.language-display {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flag-img {
+  width: 10vw;
+}
+
+.flag-img:hover {
+  cursor: pointer;
+  /* width: 12vw; */
+  opacity:80%;
+}
