@@ -1,0 +1,21 @@
+.results-img-display {
+  display: flex;
+  justify-content: space-evenly;
+}
+.phrase-header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flag-img-small {
+  width: 5vw;
+}
+
+.emoji-img-small {
+  width: 5vw;
+}
+
+.phrase-list {
+  cursor: pointer;
+}
+

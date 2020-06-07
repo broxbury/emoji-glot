@@ -10,6 +10,7 @@ const App = () => {
   const [currentCode, setCurrentCode] = useState('');
   const [currentEmoji, setCurrentEmoji] = useState('');
   const [currentPhrases, setCurrentPhrases] = useState('');
+  const [showPhrases, setShowPhrases] = useState(false)
 
   const updateCurrentLanguage = (code, language) => {
     setCurrentLanguage(language)
@@ -20,13 +21,25 @@ const App = () => {
     setCurrentEmoji(id)
     setCurrentPhrases(phrases)
   }
+  const renderPhrases = () => {
+    setShowPhrases(true)
+  }
 
   return (
     <div>
       <Header />
-      <LanguageContainer updateCurrentLanguageInfo={updateCurrentLanguage} />
-      {currentLanguage && <EmojiContainer updateCurrentEmojiInfo={updateCurrentEmoji}/>}
-      {currentEmoji && <Results code={currentCode} language={currentLanguage} emoji={currentEmoji} phrases={currentPhrases}/>}
+      {!showPhrases && (
+        <>
+          <LanguageContainer updateCurrentLanguageInfo={updateCurrentLanguage} />
+          <EmojiContainer updateCurrentEmojiInfo={updateCurrentEmoji}/>
+        </>
+      )}
+      <Results code={currentCode} 
+               language={currentLanguage} 
+               emoji={currentEmoji} 
+               phrases={currentPhrases}
+               renderPhrases={renderPhrases}
+               />
     </div>
   )
 }

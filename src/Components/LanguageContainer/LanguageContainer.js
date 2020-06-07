@@ -9,7 +9,6 @@ export const LanguageContainer  = ({ updateCurrentLanguageInfo }) => {
 
   const updateCurrentLanguage = (code, language) => {
     updateCurrentLanguageInfo(code, language)
-    
   }
 
   const flags = languageData.map(flag => {
