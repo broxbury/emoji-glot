@@ -10,7 +10,7 @@ export const Header = ({ resetData }) => {
         </NavLink>
           <h1 className='title'>EMOJI-GLOT</h1>
         <NavLink to='/' onClick={resetData}>
-          <h3>Home</h3>
+          <h3 className='header-sub-text'>Home</h3>
         </NavLink>  
     </div>
   )

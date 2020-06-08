@@ -29,27 +29,20 @@ const App = () => {
     }
   }
 
-  const updateFavorite = (language, phrase, translation, code) => {
+  const removeFavorite =(id) => {
+    let newSaved = saved.filter(trans => trans.id !== id)
+    setSaved(newSaved)
+  }
+
+  const addFavorite = (language, phrase, translation, code) => {
     const favObj = {
       'language': language,
       'phrase': phrase,
       'translation': translation,
-      'code': code
+      'code': code,
+      'id': language + phrase + translation + code
     }
-
-    // setSaved([favObj])
-    console.log(favObj)
-    const isFavorite = saved.indexOf(favObj)
-
-    if(isFavorite === -1 && saved !== []) {
-      setSaved([...saved, favObj])
-      console.group('here')
-    } else if (saved !== [] && isFavorite) {
-      const newSaved = saved.splice(isFavorite, 1)
-      setSaved(newSaved)
-    } else if(saved === []) {
-
-    }
+    setSaved([...saved, favObj])
   }
 
   const renderPhrases = () => {
@@ -90,12 +83,14 @@ const App = () => {
                        phrase={match.params.phrase} 
                        language={match.params.language} 
                        code={match.params.code} 
-                       updateFavorite={updateFavorite}
+                       addFavorite={addFavorite}
+                       removeFavorite={removeFavorite }
 
           />)
       }}/>
       <Route exact path='/saved'>
-        <SavedTranslations saved={saved}/>
+        <SavedTranslations saved={saved} 
+                           removeFavorite={removeFavorite} />
       </Route>
     </>
    

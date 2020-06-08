@@ -20,11 +20,6 @@
   cursor: pointer;
 }
 
-.placeholder-flag {
-  filter: grayscale(100%);
-  width: 10vw;
-}
-
 .emoji-img-placeholder{
   width: 10vw;
   /* background-color: grey; */

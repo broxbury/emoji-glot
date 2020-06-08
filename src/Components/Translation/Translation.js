@@ -3,10 +3,9 @@ import './Translation.css';
 import { getTranslation } from '../../apiCalls';
 import { Link } from 'react-router-dom';
 
-export const Translation = ({ phrase, language, code, resetData, updateFavorite }) => {
+export const Translation = ({ phrase, language, code, resetData, addFavorite }) => {
   const [translation, setTranslation] = useState('');
-  const [savedTranslations, setSavedTranslations] = useState('');
-
+ 
   useEffect(() => {
     fetchTranslation(phrase)
   }, [])
@@ -33,7 +32,9 @@ export const Translation = ({ phrase, language, code, resetData, updateFavorite 
             </li> 
           </ul>
           <div className='translation-btns'>
-            <button className='favorite' onClick={() => updateFavorite(language, phrase, translation, code)}>Save translation</button>
+          <Link to='/saved'>
+            <button className='favorite' onClick={() => addFavorite(language, phrase, translation, code)}>Save Translation</button>
+            </Link>
             <Link to='/' onClick={resetData}>
               <button className='favorite'>Translate Again</button>
             </Link>
