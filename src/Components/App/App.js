@@ -21,16 +21,27 @@ const App = () => {
   }
 
   const updateCurrentEmoji = (id, phrases) => {
-    setCurrentEmoji(id)
-    setCurrentPhrases(phrases)
+    if (currentLanguage) {
+      setCurrentEmoji(id)
+      setCurrentPhrases(phrases)
+    }
   }
+
   const renderPhrases = () => {
     setShowPhrases(true)
   }
 
+  const resetData = () => {
+    setShowPhrases(false);
+    setCurrentLanguage('');
+    setCurrentCode('');
+    setCurrentEmoji('');
+    setCurrentPhrases('');
+  }
+
   return (
     <>
-      <Header />
+      <Header resetData={resetData}/>
       <Route exact path='/'>
         {!showPhrases && (
           <>
@@ -38,17 +49,18 @@ const App = () => {
             <EmojiContainer updateCurrentEmojiInfo={updateCurrentEmoji}/>
           </>
         )}
-        
+      {currentLanguage && (
       <Results code={currentCode} 
               language={currentLanguage} 
               emoji={currentEmoji} 
               phrases={currentPhrases}
               renderPhrases={renderPhrases}
-              />
+              resetData={resetData}
+              />)}
        </Route>
       <Route exact path='/:translation/:phrase/:language/:code' render={({ match }) => {
         return (
-          <Translation translation={match.params.translation} phrase={match.params.phrase} language={match.params.language} code={match.params.code}/>
+          <Translation resetData={resetData} translation={match.params.translation} phrase={match.params.phrase} language={match.params.language} code={match.params.code}/>
         )
   
       }} />

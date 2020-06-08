@@ -3,7 +3,7 @@ import './Translation.css';
 import { getTranslation } from '../../apiCalls';
 import { Link } from 'react-router-dom';
 
-export const Translation = ({ phrase, language, code, addFavorite }) => {
+export const Translation = ({ phrase, language, code, addFavorite, resetData }) => {
   const [translation, setTranslation] = useState('');
   const [savedTranslations, setSavedTranslations] = useState('');
 
@@ -25,16 +25,16 @@ export const Translation = ({ phrase, language, code, addFavorite }) => {
           <ul className='table-translations'>
             <li>
               <div className='result-div'>
-                <h2 className='colored'>"{phrase}"</h2>
-                <h2>{'in ' + language + ' is:'}</h2>
-                <h2 className='colored'>{translation}</h2>
+                <h3 className='colored'>"{phrase}"</h3>
+                <h3>{'in ' + language + ' is:'}</h3>
+                <h3 className='colored'>{translation}</h3>
               </div>
             <img className='flag-img-small' src={`/images/${language}.png`} />
             </li> 
           </ul>
           <div className='translation-btns'>
             <button className='favorite' onClick={() => addFavorite(language, phrase, translation, code)}>Save translation</button>
-            <Link to='/'>
+            <Link to='/' onClick={resetData}>
               <button className='favorite'>Translate Again</button>
             </Link>
           </div>
