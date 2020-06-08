@@ -1,0 +1,22 @@
+.table-translations {
+  display: grid;
+  justify-content: center;
+  margin-top: 20vh;
+}
+
+.result-div {
+  display: flex;
+}
+
+.colored {
+  margin-left: 8px;
+  margin-right: 8px;
+  color: green;
+}
+
+.loading {
+  display: grid;
+  justify-content: center;
+  margin-top: 20vh;
+
+}
