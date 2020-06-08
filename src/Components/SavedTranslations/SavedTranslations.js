@@ -2,7 +2,7 @@ import React from 'react';
 import './SavedTranslations.css';
 
 export const SavedTranslations = ({ saved, removeFavorite }) => {
-  console.log(saved)
+    
     const result = saved.map(trans => {
       return (
         <div key={Math.floor(Math.random() * 1000)} className='saved'>
@@ -20,16 +20,12 @@ export const SavedTranslations = ({ saved, removeFavorite }) => {
         </div>
       )
     })
- 
-
+  
   return(
     <>
-      <h2 className='centered-title'>Saved Translations:</h2>
+      <h2 className='centered-title'>Saved Translations</h2>
       <ul className='table-translations'>
-      {saved && result}
-        {!saved && (
-          <h2>Hello</h2>
-        )}
+      {result}
       </ul>
     </>
   )
