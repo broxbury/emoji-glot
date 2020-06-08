@@ -7,6 +7,7 @@ import { Results } from '../Results/Results';
 import { Route } from 'react-router-dom';
 import { Translation } from '../Translation/Translation';
 import { SavedTranslations } from '../SavedTranslations/SavedTranslations';
+import useLocalStorage  from '../../hooks'
 
 const App = () => {
   const [currentLanguage, setCurrentLanguage] = useState('');
@@ -14,7 +15,7 @@ const App = () => {
   const [currentEmoji, setCurrentEmoji] = useState('');
   const [currentPhrases, setCurrentPhrases] = useState('');
   const [showPhrases, setShowPhrases] = useState(false);
-  const [saved, setSaved] = useState([])
+  const [saved, setSaved] = useLocalStorage('saved', [])
 
   const updateCurrentLanguage = (code, language) => {
     setCurrentLanguage(language)
@@ -35,15 +36,19 @@ const App = () => {
       'translation': translation,
       'code': code
     }
+
+    // setSaved([favObj])
     console.log(favObj)
     const isFavorite = saved.indexOf(favObj)
 
-    if(isFavorite === -1) {
+    if(isFavorite === -1 && saved !== []) {
       setSaved([...saved, favObj])
       console.group('here')
-    } else {
+    } else if (saved !== [] && isFavorite) {
       const newSaved = saved.splice(isFavorite, 1)
       setSaved(newSaved)
+    } else if(saved === []) {
+
     }
   }
 
