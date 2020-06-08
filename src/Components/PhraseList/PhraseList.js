@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './PhraseList.css'
 
 export const PhraseList = ({ language, code, emoji, currentPhrases}) => {
-  console.log(language, code, emoji, currentPhrases  )
+  
   return (
     <>
     <div className='phrase-header'>

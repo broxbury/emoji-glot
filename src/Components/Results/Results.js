@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import './Results.css';
 import { PhraseList } from '../PhraseList/PhraseList.js';
-import { getTranslation } from '../../apiCalls';
 import { Link } from 'react-router-dom';
 
 export const Results = ({ code, language, emoji, phrases, renderPhrases }) => {
@@ -9,18 +8,12 @@ export const Results = ({ code, language, emoji, phrases, renderPhrases }) => {
   const [currentPhrases, setCurrentPhrases] = useState([]);
   const [favorites, setFavorites] = useState([]);
  
-  const updateFavorite = (phrase) => {
-    const favPhrase = phrases.indexOf(phrase);
-		!phrases[favPhrase].favorite ? phrases[favPhrase].favorite = true : phrases[favPhrase].favorite = false;
-    setFavorites([...phrases]);
-  }
-
   const phraseList = () => {
     if (language && emoji) {
       renderPhrases();
       const phraseItems = phrases.map(phrase => {
         return (
-        <Link to={`translation/${phrase}/${language}/${code}`}>
+        <Link key={phrase} to={`translation/${phrase}/${language}/${code}`}>
           <li key={phrase} className='phrase-list'>
             <h2>{phrase}</h2>
           </li>
@@ -28,8 +21,6 @@ export const Results = ({ code, language, emoji, phrases, renderPhrases }) => {
       })
     setCurrentPhrases(phraseItems)
     setShowPhrases(true)
-    } else {
-      console.log('not yet')
     }
   }
 
@@ -55,7 +46,7 @@ export const Results = ({ code, language, emoji, phrases, renderPhrases }) => {
         </div>
       )}
       {showPhrases &&  (
-        <PhraseList language={language} code={code} emoji={emoji} currentPhrases={currentPhrases}/>
+        <PhraseList language={language} code={code} emoji={emoji} currentPhrases={currentPhrases} />
       )}
     </div>
   )

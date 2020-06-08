@@ -6,14 +6,15 @@ import { EmojiContainer } from '../EmojiContainer/EmojiContainer.js';
 import { Results } from '../Results/Results';
 import { Route } from 'react-router-dom';
 import { Translation } from '../Translation/Translation';
+import { SavedTranslations } from '../SavedTranslations/SavedTranslations';
 
 const App = () => {
   const [currentLanguage, setCurrentLanguage] = useState('');
   const [currentCode, setCurrentCode] = useState('');
   const [currentEmoji, setCurrentEmoji] = useState('');
   const [currentPhrases, setCurrentPhrases] = useState('');
-  const [showPhrases, setShowPhrases] = useState(false)
-
+  const [showPhrases, setShowPhrases] = useState(false);
+  const [saved, setSaved] = useState([])
 
   const updateCurrentLanguage = (code, language) => {
     setCurrentLanguage(language)
@@ -24,6 +25,25 @@ const App = () => {
     if (currentLanguage) {
       setCurrentEmoji(id)
       setCurrentPhrases(phrases)
+    }
+  }
+
+  const updateFavorite = (language, phrase, translation, code) => {
+    const favObj = {
+      'language': language,
+      'phrase': phrase,
+      'translation': translation,
+      'code': code
+    }
+    console.log(favObj)
+    const isFavorite = saved.indexOf(favObj)
+
+    if(isFavorite === -1) {
+      setSaved([...saved, favObj])
+      console.group('here')
+    } else {
+      const newSaved = saved.splice(isFavorite, 1)
+      setSaved(newSaved)
     }
   }
 
@@ -57,13 +77,21 @@ const App = () => {
               renderPhrases={renderPhrases}
               resetData={resetData}
               />)}
-       </Route>
+      </Route>
       <Route exact path='/:translation/:phrase/:language/:code' render={({ match }) => {
         return (
-          <Translation resetData={resetData} translation={match.params.translation} phrase={match.params.phrase} language={match.params.language} code={match.params.code}/>
-        )
-  
-      }} />
+          <Translation resetData={resetData} 
+                       translation={match.params.translation} 
+                       phrase={match.params.phrase} 
+                       language={match.params.language} 
+                       code={match.params.code} 
+                       updateFavorite={updateFavorite}
+
+          />)
+      }}/>
+      <Route exact path='/saved'>
+        <SavedTranslations saved={saved}/>
+      </Route>
     </>
    
   )
