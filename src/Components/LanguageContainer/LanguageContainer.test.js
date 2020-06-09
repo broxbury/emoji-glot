@@ -7,10 +7,11 @@ import { languageData } from '../../appData/languageData';
 
 
 describe('LanguageContainer', () => {
+  const mockUpdateFn = jest.fn();
   it('should display all the emojis', () => {
     const { getByLabelText } = render (
       <MemoryRouter>
-        <LanguageContainer />
+        <LanguageContainer updateCurrentLanguageInfo={mockUpdateFn} />
       </MemoryRouter>
     )
     const japanFlag = getByLabelText('japanese')
@@ -24,7 +25,7 @@ describe('LanguageContainer', () => {
         <LanguageContainer updateCurrentLanguageInfo={mockUpdateFn} />
       </MemoryRouter>
     )
-    fireEvent.click(getByLabelText('chinese'))
-    expect(mockUpdateFn).toHaveBeenCalledWith(languageData[4].code, languageData[4].language)
+    fireEvent.click(getByLabelText('chinese'));
+    expect(mockUpdateFn).toHaveBeenCalledWith(languageData[5].code, languageData[5].language);
   })
 })

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Header } from '../Header/Header.js';
 import { LanguageContainer } from '../LanguageContainer/LanguageContainer.js';
@@ -59,7 +59,7 @@ const App = () => {
 
   return (
     <>
-      <Header resetData={resetData}/>
+      <Header resetData={resetData} numSaved={saved.length}/>
       <Route exact path='/'>
         {!showPhrases && (
           <>

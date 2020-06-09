@@ -1,0 +1,15 @@
+.phrase-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.flag-img-small-phrase {
+  width: 5vw;
+  padding-right: 5%;
+}
+
+.emoji-img-small-phrase {
+  width: 5vw;
+  transition-duration: 300ms;
+  padding-left: 5%;
+}
