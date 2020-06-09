@@ -59,7 +59,7 @@ const App = () => {
 
   return (
     <>
-      <Header resetData={resetData}/>
+      <Header resetData={resetData} numSaved={saved.length}/>
       <Route exact path='/'>
         {!showPhrases && (
           <>
