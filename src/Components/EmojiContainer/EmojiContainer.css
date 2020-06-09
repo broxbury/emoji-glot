@@ -19,3 +19,6 @@
 .emoji-img:hover {
   opacity: 80%;
 }
+.hidden {
+  opacity: 0%;
+}

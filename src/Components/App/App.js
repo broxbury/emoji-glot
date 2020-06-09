@@ -64,7 +64,7 @@ const App = () => {
         {!showPhrases && (
           <>
             <LanguageContainer updateCurrentLanguageInfo={updateCurrentLanguage} />
-            <EmojiContainer updateCurrentEmojiInfo={updateCurrentEmoji}/>
+            <EmojiContainer updateCurrentEmojiInfo={updateCurrentEmoji} language={currentLanguage}/>
           </>
         )}
       {currentLanguage && (
