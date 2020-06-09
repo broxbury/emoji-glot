@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.css';
+import PropTypes from 'prop-types';
 
 export const Header = ({ resetData }) => {
   return (
@@ -15,4 +16,8 @@ export const Header = ({ resetData }) => {
     </div>
   )
 }
+
+Header.propTypes = {
+  resetData: PropTypes.func
+};
 

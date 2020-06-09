@@ -1,7 +1,8 @@
 import React from 'react';
 import './LanguageContainer.css';
-import { languageData } from '../../appData/languageData.js'
-import { Language } from '../Language/Language.js'
+import { languageData } from '../../appData/languageData.js';
+import { Language } from '../Language/Language.js';
+import PropTypes from 'prop-types';
 
 export const LanguageContainer  = ({ updateCurrentLanguageInfo }) => {
   
@@ -26,3 +27,7 @@ export const LanguageContainer  = ({ updateCurrentLanguageInfo }) => {
     </div>
   )
 }
+
+LanguageContainer.propTypes = {
+  updateCurrentLanguageInfo: PropTypes.func.isRequired
+};

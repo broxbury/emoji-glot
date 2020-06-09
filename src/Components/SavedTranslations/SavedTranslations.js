@@ -1,5 +1,6 @@
 import React from 'react';
 import './SavedTranslations.css';
+import PropTypes from 'prop-types';
 
 export const SavedTranslations = ({ saved, removeFavorite }) => {
     
@@ -30,3 +31,8 @@ export const SavedTranslations = ({ saved, removeFavorite }) => {
     </>
   )
 }
+
+SavedTranslations.propTypes = {
+  saved: PropTypes.array,
+  removeFavorite: PropTypes.func
+};

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Translation.css';
 import { getTranslation } from '../../apiCalls';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const Translation = ({ phrase, language, code, resetData, addFavorite }) => {
   const [translation, setTranslation] = useState('');
@@ -45,3 +46,12 @@ export const Translation = ({ phrase, language, code, resetData, addFavorite }) 
     </div>
   )
 }
+
+Translation.propTypes = {
+  phrase: PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired,
+  code: PropTypes.string.isRequired,
+  resetData: PropTypes.func.isRequired,
+  addFavorite: PropTypes.func.isRequired
+};
+
