@@ -8,6 +8,20 @@
   display: flex;
 }
 
+.result-div h3 {
+  font-size: 1em;
+}
+
+.translation-list-item {
+  display: grid;
+}
+
+.centered-flag {
+  display: grid;
+  justify-content: center;
+}
+
+
 .colored {
   margin-left: 8px;
   margin-right: 8px;

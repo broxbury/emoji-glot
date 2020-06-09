@@ -2,10 +2,15 @@
   display: flex;
   justify-content: space-evenly;
   margin-top: 3%;
+  transition-duration: 300ms;
 }
 .phrase-header {
   display: flex;
   justify-content: space-evenly;
+}
+
+.emoji-img {
+  transition-duration: 300ms;
 }
 
 .flag-img-small {
@@ -14,6 +19,7 @@
 
 .emoji-img-small {
   width: 5vw;
+  transition-duration: 300ms;
 }
 
 .phrase-list {
@@ -22,10 +28,11 @@
 
 .emoji-img-placeholder{
   width: 10vw;
-  /* background-color: grey; */
+  
 }
 .plus-btn {
   font-size: 50px;
+  transition-duration: 300ms;
 }
 
 .flag-display {
@@ -36,6 +43,7 @@
 .emoji-display-placeholder {
   display: grid;
   text-align: center;
+  transition-duration: 300ms;
 }
 
 .advance-btn {
@@ -50,6 +58,7 @@
 .advance-btn:hover {
   opacity: 80%;
   border: 2px solid black;
+  transition-duration: 300ms;
 }
 
 hr {

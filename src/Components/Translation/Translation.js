@@ -22,13 +22,15 @@ export const Translation = ({ phrase, language, code, resetData, addFavorite }) 
       {translation && (
         <>
           <ul className='table-translations'>
-            <li>
+            <li className='translation-list-item'>
               <div className='result-div'>
                 <h3 className='colored'>"{phrase}"</h3>
                 <h3>{'in ' + language + ' is:'}</h3>
                 <h3 className='colored'>{translation}</h3>
               </div>
-            <img aria-label={language} alt={language} className='flag-img-small' src={`/images/${language}.png`} />
+              <div className='centered-flag'> 
+                <img aria-label={language} alt={language} className='flag-img-small' src={`/images/${language}.png`} />
+              </div>
             </li> 
           </ul>
           <div className='translation-btns'>
