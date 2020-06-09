@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './Results.css';
 import { PhraseList } from '../PhraseList/PhraseList.js';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const Results = ({ code, language, emoji, phrases, renderPhrases }) => {
   const [showPhrases, setShowPhrases] = useState(false);
@@ -50,3 +51,10 @@ export const Results = ({ code, language, emoji, phrases, renderPhrases }) => {
     </div>
   )
 }
+
+Results.propTypes = {
+  code: PropTypes.string,
+  language: PropTypes.string,
+  emoji: PropTypes.string,
+  renderPhrases: PropTypes.func.isRequired
+};

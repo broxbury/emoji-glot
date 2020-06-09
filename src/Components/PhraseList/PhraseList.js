@@ -1,5 +1,6 @@
 import React from 'react';
-import './PhraseList.css'
+import './PhraseList.css';
+import PropTypes from 'prop-types';
 
 export const PhraseList = ({ language, code, emoji, currentPhrases}) => {
   
@@ -18,3 +19,10 @@ export const PhraseList = ({ language, code, emoji, currentPhrases}) => {
  </>
   )
 }
+
+PhraseList.propTypes = {
+  code: PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired,
+  emoji: PropTypes.string.isRequired,
+  currentPhrases: PropTypes.array.isRequired
+};

@@ -2,6 +2,7 @@ import React from 'react';
 import './EmojiContainer.css';
 import { emojiData } from '../../appData/emojiData.js';
 import { Emoji }from '../Emoji/Emoji.js';
+import PropTypes from 'prop-types';
 
 export const EmojiContainer = ({ updateCurrentEmojiInfo, language }) => {
 
@@ -25,3 +26,8 @@ export const EmojiContainer = ({ updateCurrentEmojiInfo, language }) => {
     </div>
   )
 }
+
+EmojiContainer.propTypes = {
+  language: PropTypes.string,
+  updateCurrentEmojiInfo: PropTypes.func
+};

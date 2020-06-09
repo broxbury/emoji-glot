@@ -1,5 +1,6 @@
 import React from 'react';
 import './Language.css';
+import PropTypes from 'prop-types';
 
 export const Language  = ({updateCurrentLanguage, code, language}) => {
   
@@ -9,4 +10,10 @@ export const Language  = ({updateCurrentLanguage, code, language}) => {
        </>
   )
 }
+
+Language.propTypes = {
+  language: PropTypes.string.isRequired,
+  code: PropTypes.string.isRequired,
+  updateCurrentLanguage: PropTypes.func.isRequired
+};
  

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Emoji.css';
-
+import PropTypes from 'prop-types';
 
 export const Emoji = ({updateCurrentEmoji, id, phrases }) => {
 
@@ -11,3 +11,8 @@ export const Emoji = ({updateCurrentEmoji, id, phrases }) => {
   )
 }
 
+Emoji.propTypes = {
+  id: PropTypes.string.isRequired,
+  phrases: PropTypes.array.isRequired,
+  updateCurrentEmoji: PropTypes.func.isRequired
+};
