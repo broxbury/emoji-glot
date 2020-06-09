@@ -1,0 +1,22 @@
+.centered-title {
+  display: flex; 
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.trash-can {
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.trash-can:hover {
+ opacity: 80%;
+ background-color: red;
+ border-radius: 20px;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: space-around;
+}

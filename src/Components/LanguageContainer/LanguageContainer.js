@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './LanguageContainer.css';
-import { Link } from 'react-router-dom';
 import { languageData } from '../../appData/languageData.js'
 import { Language } from '../Language/Language.js'
 
-export const LanguageContainer  = () => {
-  const [currentLanguage, setCurrentLanguage] = useState('');
+export const LanguageContainer  = ({ updateCurrentLanguageInfo }) => {
+  
 
   const updateCurrentLanguage = (code, language) => {
-    setCurrentLanguage(language)
-    console.log(currentLanguage)
+    updateCurrentLanguageInfo(code, language)
   }
 
   const flags = languageData.map(flag => {

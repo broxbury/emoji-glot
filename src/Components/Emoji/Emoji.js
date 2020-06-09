@@ -2,8 +2,12 @@ import React from 'react';
 import './Emoji.css';
 
 
-export const Emoji = () => {
+export const Emoji = ({updateCurrentEmoji, id, phrases }) => {
+
   return(
-    <img></img>
+    <>
+      <img aria-label={id} alt={id} id={id} src={`/images/${id}.png`} className='emoji-img' onClick={() => updateCurrentEmoji(id, phrases)}></img>
+    </>
   )
 }
+

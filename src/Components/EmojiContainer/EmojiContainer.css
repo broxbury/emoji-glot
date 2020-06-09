@@ -13,6 +13,7 @@
 
 .emoji-img {
   width: 10vw;
+  cursor: pointer;
 }
 
 .emoji-img:hover {

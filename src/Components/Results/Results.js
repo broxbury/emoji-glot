@@ -1,25 +1,53 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './Results.css';
-import { getTranslation } from "../../apiCalls"
+import { PhraseList } from '../PhraseList/PhraseList.js';
+import { Link } from 'react-router-dom';
 
-export const Results = () => {
-  const [phrase, setPhrase] = useState('')
-  
-  useEffect(() => {
-    // const fetchTranslation = async () => {
-    //   const translation = await getTranslation();
-    // }
-    getTranslation('hello beautiful', 'es')
-  }, [])
+export const Results = ({ code, language, emoji, phrases, renderPhrases }) => {
+  const [showPhrases, setShowPhrases] = useState(false);
+  const [currentPhrases, setCurrentPhrases] = useState([]);
+ 
+
+  const phraseList = () => {
+    if (language && emoji) {
+      renderPhrases();
+      const phraseItems = phrases.map(phrase => {
+        return (
+        <Link key={phrase} to={`translation/${phrase}/${language}/${code}`}>
+          <li key={phrase} className='phrase-list'>
+            <h2>{phrase}</h2>
+          </li>
+        </Link>)
+      })
+    setCurrentPhrases(phraseItems)
+    setShowPhrases(true)
+    }
+  }
 
   return(
     <div className='results-container'>
-      <div className='results-img-display'>
-        
-      </div>
-      <div className='list-display'>
-
-      </div>
+      {!showPhrases && (
+        <div className='results-img-display'>
+            <div className='placeholder-flag'>
+            </div>
+          {language && (
+            <div className='flag-display'>
+              <img aria-label={`selected-${language}`} alt={language} id={code} src={`/images/${language}.png`} className='flag-img'></img>
+              <p>{language}</p>
+            </div>)}
+          <h2 className='plus-btn'>+</h2>
+          {!emoji && <div className='emoji-img-placeholder'></div>}
+          {emoji && (
+            <div className='emoji-display-placeholder'>
+              <img aria-label={`selected-${emoji}`} alt={emoji} id={emoji} src={`/images/${emoji}.png`} className='emoji-img'></img>
+              <p>{emoji}</p>
+            </div>)}
+          <button className='advance-btn' onClick={phraseList}>NEXT:</button>
+        </div>
+      )}
+      {showPhrases &&  (
+        <PhraseList language={language} code={code} emoji={emoji} currentPhrases={currentPhrases} />
+      )}
     </div>
   )
 }
