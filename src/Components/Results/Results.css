@@ -45,10 +45,11 @@
   background: rgb(244, 244, 48);
   border-radius: 5px;
   cursor: pointer;
+  border: 0px;
 }
 .advance-btn:hover {
   opacity: 80%;
-  border: red;
+  border: 2px solid black;
 }
 
 hr {

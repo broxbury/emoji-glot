@@ -13,8 +13,8 @@ export const SavedTranslations = ({ saved, removeFavorite }) => {
             <h3 className='colored'>{trans.translation}</h3>
           </div>
           <div className='flex-right'>
-            <img className='flag-img-small' src={`/images/${trans.language}.png`} />
-            <img className='trash-can' src='/images/delete.png' onClick={() => removeFavorite(trans.id)}></img>
+            <img aria-label={trans.language} alt={trans.language} className='flag-img-small' src={`/images/${trans.language}.png`} />
+            <img aria-label={trans.id} alt='delete saved translation' className='trash-can' src='/images/delete.png' onClick={() => removeFavorite(trans.id)}></img>
           </div>
           </li> 
         </div>

@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 export const Results = ({ code, language, emoji, phrases, renderPhrases }) => {
   const [showPhrases, setShowPhrases] = useState(false);
   const [currentPhrases, setCurrentPhrases] = useState([]);
-  const [favorites, setFavorites] = useState([]);
  
+
   const phraseList = () => {
     if (language && emoji) {
       renderPhrases();
@@ -32,14 +32,14 @@ export const Results = ({ code, language, emoji, phrases, renderPhrases }) => {
             </div>
           {language && (
             <div className='flag-display'>
-              <img id={code} src={`/images/${language}.png`} className='flag-img'></img>
+              <img aria-label={`selected-${language}`} alt={language} id={code} src={`/images/${language}.png`} className='flag-img'></img>
               <p>{language}</p>
             </div>)}
           <h2 className='plus-btn'>+</h2>
           {!emoji && <div className='emoji-img-placeholder'></div>}
           {emoji && (
             <div className='emoji-display-placeholder'>
-              <img id={emoji} src={`/images/${emoji}.png`} className='emoji-img'></img>
+              <img aria-label={`selected-${emoji}`} alt={emoji} id={emoji} src={`/images/${emoji}.png`} className='emoji-img'></img>
               <p>{emoji}</p>
             </div>)}
           <button className='advance-btn' onClick={phraseList}>NEXT:</button>

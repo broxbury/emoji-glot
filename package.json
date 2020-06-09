@@ -34,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "@sheerun/mutationobserver-shim": "^0.3.3",
     "@testing-library/dom": "^7.11.0",
     "@testing-library/jest-dom": "^5.9.0"
   }

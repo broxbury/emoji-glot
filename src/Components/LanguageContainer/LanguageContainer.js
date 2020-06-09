@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './LanguageContainer.css';
-import { Link } from 'react-router-dom';
 import { languageData } from '../../appData/languageData.js'
 import { Language } from '../Language/Language.js'
 

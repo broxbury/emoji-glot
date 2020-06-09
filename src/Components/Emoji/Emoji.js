@@ -6,7 +6,7 @@ export const Emoji = ({updateCurrentEmoji, id, phrases }) => {
 
   return(
     <>
-      <img id={id} src={`/images/${id}.png`} className='emoji-img' onClick={() => updateCurrentEmoji(id, phrases)}></img>
+      <img aria-label={id} alt={id} id={id} src={`/images/${id}.png`} className='emoji-img' onClick={() => updateCurrentEmoji(id, phrases)}></img>
     </>
   )
 }

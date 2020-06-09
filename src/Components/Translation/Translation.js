@@ -28,7 +28,7 @@ export const Translation = ({ phrase, language, code, resetData, addFavorite }) 
                 <h3>{'in ' + language + ' is:'}</h3>
                 <h3 className='colored'>{translation}</h3>
               </div>
-            <img className='flag-img-small' src={`/images/${language}.png`} />
+            <img aria-label={language} alt={language} className='flag-img-small' src={`/images/${language}.png`} />
             </li> 
           </ul>
           <div className='translation-btns'>
