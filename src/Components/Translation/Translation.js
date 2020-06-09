@@ -20,7 +20,6 @@ export const Translation = ({ phrase, language, code, resetData, addFavorite }) 
 
   return(
     <div className='translation-page'>
-    {/* <h1 >Your Translation:</h1> */}
       {!translation & !error ? (<h1 className='loading'>Loading...</h1>) : ''}
       {error && (
         <>

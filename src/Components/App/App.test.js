@@ -101,6 +101,29 @@ describe("App", () => {
     fireEvent.click(happy1)
     expect(translation).not.toBeInTheDocument();
   })
+
+  it('should navigate to the saved page', () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    )
+    
+    fireEvent.click(getByText('Saved-1'));
+    expect(getByText('Saved Translations')).toBeInTheDocument();
+  })
+
+  it('should navigate to the home page', () => {
+    const { getByText } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    )
+    
+    fireEvent.click(getByText('Saved-1'));
+    fireEvent.click(getByText('Home'));
+    expect(getByText('Please select a language:')).toBeInTheDocument();
+  })
 })
 
 
