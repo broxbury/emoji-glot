@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 export const Translation = ({ phrase, language, code, resetData, addFavorite }) => {
   const [translation, setTranslation] = useState('');
+  const [error, setError] = useState(false);
  
   useEffect(() => {
     fetchTranslation(phrase)
@@ -13,13 +14,25 @@ export const Translation = ({ phrase, language, code, resetData, addFavorite }) 
 
   const fetchTranslation = async (phrase) => {
     const translationData = await getTranslation(phrase, code);
+    !translationData && setError(true)
     translationData && setTranslation(translationData);
   } 
 
   return(
     <div className='translation-page'>
     {/* <h1 >Your Translation:</h1> */}
-      {!translation && <h1 className='loading'>Loading...</h1>}
+      {!translation & !error ? (<h1 className='loading'>Loading...</h1>) : ''}
+      {error && (
+        <>
+          <h2 className='error-text'>Uh oh! Looks like this tranlsation isn't available right now. Please try again later</h2>
+          <div className='error-display'>
+          <img className='emoji-img' src='/images/crying.png'></img>
+          <Link to='/' onClick={resetData}>
+              <button className='favorite-error'>TRY AGAIN</button>
+            </Link>
+          </div>
+        </>
+      )}
       {translation && (
         <>
           <ul className='table-translations'>

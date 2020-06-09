@@ -8,12 +8,15 @@ import { languageData } from '../../appData/languageData';
 
 describe('Results', () => {
   it('should render correct emoji and flag when selected', () => {
+    const mockRenderPhrases = jest.fn();
+    
     const { getByLabelText} = render(
       <MemoryRouter>
         <Results code={languageData[0].code} 
                  language={languageData[0].language}
                  emoji={emojiData[0].emotion}
                  phrases={emojiData[0].phrases}
+                 renderPhrases={mockRenderPhrases}
         />
       </MemoryRouter>
     );
