@@ -3,7 +3,7 @@ import './EmojiContainer.css';
 import { emojiData } from '../../appData/emojiData.js';
 import { Emoji }from '../Emoji/Emoji.js';
 
-export const EmojiContainer = ({ updateCurrentEmojiInfo }) => {
+export const EmojiContainer = ({ updateCurrentEmojiInfo, language }) => {
 
   const updateCurrentEmoji = (id, phrases) => {
     updateCurrentEmojiInfo(id, phrases)
@@ -15,7 +15,7 @@ export const EmojiContainer = ({ updateCurrentEmojiInfo }) => {
     )
   })
   return (
-    <div className='emoji-container'>
+    <div className={language ? 'emoji-container' : 'hidden'}>
       <div className='emoji-title'>
         <h3>Now select an Emoji!</h3>
       </div>

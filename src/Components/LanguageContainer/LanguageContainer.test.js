@@ -1,30 +1,30 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { EmojiContainer } from './EmojiContainer';
+import { LanguageContainer } from './LanguageContainer';
 import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
-import { emojiData } from '../../appData/emojiData';
+import { languageData } from '../../appData/languageData';
 
 
-describe('EmojiContainer', () => {
+describe('LanguageContainer', () => {
   it('should display all the emojis', () => {
     const { getByLabelText } = render (
       <MemoryRouter>
-        <EmojiContainer />
+        <LanguageContainer />
       </MemoryRouter>
     )
-    const smileEmoji = getByLabelText('smile')
-    expect(smileEmoji).toBeInTheDocument();
+    const japanFlag = getByLabelText('japanese')
+    expect(japanFlag).toBeInTheDocument();
   })
 
   it('should update the current emoji info', () => {
     const mockUpdateFn = jest.fn();
     const { getByLabelText } = render (
       <MemoryRouter>
-        <EmojiContainer updateCurrentEmojiInfo={mockUpdateFn} />
+        <LanguageContainer updateCurrentLanguageInfo={mockUpdateFn} />
       </MemoryRouter>
     )
-    fireEvent.click(getByLabelText('smile'))
-    expect(mockUpdateFn).toHaveBeenCalledWith(emojiData[3].emotion, emojiData[3].phrases)
+    fireEvent.click(getByLabelText('chinese'))
+    expect(mockUpdateFn).toHaveBeenCalledWith(languageData[4].code, languageData[4].language)
   })
 })

@@ -30,17 +30,16 @@ export const Results = ({ code, language, emoji, phrases, renderPhrases }) => {
         <div className='results-img-display'>
             <div className='placeholder-flag'>
             </div>
-          {language && (
             <div className='flag-display'>
               <img aria-label={`selected-${language}`} alt={language} id={code} src={`/images/${language}.png`} className='flag-img'></img>
               <p>{language}</p>
-            </div>)}
+            </div>
           <h2 className='plus-btn'>+</h2>
           {!emoji && <div className='emoji-img-placeholder'></div>}
           {emoji && (
             <div className='emoji-display-placeholder'>
               <img aria-label={`selected-${emoji}`} alt={emoji} id={emoji} src={`/images/${emoji}.png`} className='emoji-img'></img>
-              <p>{emoji}</p>
+              <p className='emoji-img'>{emoji}</p>
             </div>)}
           <button className='advance-btn' onClick={phraseList}>NEXT:</button>
         </div>

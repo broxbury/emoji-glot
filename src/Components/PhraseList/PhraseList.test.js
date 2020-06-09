@@ -8,14 +8,15 @@ import { languageData } from '../../appData/languageData';
 
 describe('PhraseList', () => {
   it('should display the phrases passed down from Results', () => {
-    const { getByText, getByLabelText } = render(
+    const { getByText } = render(
       <MemoryRouter>
         <PhraseList language={languageData[1].language} 
                     code={languageData[1].code} 
-                    emoji={emojiData[2].emmotion} 
-                    currentPhrases={languageData[1].phrases} />
+                    emoji={emojiData[2].emotion} 
+                    currentPhrases={emojiData[2].phrases} />
       </MemoryRouter>
     )
-    
+    const phrase = getByText('I am so sad right now', { exact: false })
+    expect(phrase).toBeInTheDocument();
   })
 })

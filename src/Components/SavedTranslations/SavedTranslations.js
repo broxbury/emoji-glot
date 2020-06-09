@@ -6,7 +6,7 @@ export const SavedTranslations = ({ saved, removeFavorite }) => {
     const result = saved.map(trans => {
       return (
         <div key={Math.floor(Math.random() * 1000)} className='saved'>
-          <li>
+          <li className='translation-result-item'>
           <div className='result-div'>
             <h3 className='colored'>"{trans.phrase}"</h3>
             <h3>{'in ' + trans.language + ' is:'}</h3>

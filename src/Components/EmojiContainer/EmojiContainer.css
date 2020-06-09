@@ -17,5 +17,14 @@
 }
 
 .emoji-img:hover {
+  transition-duration: 200ms;
   opacity: 80%;
+}
+
+.hidden {
+  opacity: 0%;
+}
+
+.emoji-container {
+  transition-duration: 300ms;
 }

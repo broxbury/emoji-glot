@@ -10,13 +10,17 @@
   margin-left: 20px;
   cursor: pointer;
 }
+
 .trash-can:hover {
- opacity: 80%;
- background-color: red;
- border-radius: 20px;
+ opacity: 70%;
 }
 
 .flex-right {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.translation-result-item {
+  display: grid;
+  justify-content: center;
 }
