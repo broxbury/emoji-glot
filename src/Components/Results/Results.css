@@ -4,10 +4,6 @@
   margin-top: 3%;
   transition-duration: 300ms;
 }
-.phrase-header {
-  display: flex;
-  justify-content: space-evenly;
-}
 
 .emoji-img {
   transition-duration: 300ms;
@@ -87,7 +83,7 @@ li {
 }
 
 .phrase-header {
-  display: flex;
+  display: grid;
   justify-content: space-evenly;
   margin-top: 3%;
 }
