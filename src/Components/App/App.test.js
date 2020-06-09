@@ -67,12 +67,40 @@ describe("App", () => {
     expect(translation).toBeInTheDocument();
       
     fireEvent.click(getByText('Save Translation'))
-    
+  
     const happy1 = getByLabelText("spanishI'm so happy!This is a mocked return of an API calles")
     expect(happy1).toBeInTheDocument();
   })
 
+  it('should save and remove selected translations', async () => {
+    let mockData2 = "This is a mocked return of an API call number2"
+    getTranslation.mockResolvedValue(mockData2)
+    const { getByLabelText, getByText, debug } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    )
+    fireEvent.click(getByLabelText('spanish'))
+    
+    fireEvent.click(getByLabelText('smile'))
 
+    fireEvent.click(getByText('NEXT:'));
+
+    const happy = getByText("I'm so happy!")
+    expect(happy).toBeInTheDocument();
+
+    fireEvent.click(getByText("I'm so happy!"))
+    const translation = await waitFor(() => getByText("This is a mocked return of an API call number2"))
+    expect(translation).toBeInTheDocument();
+      
+    fireEvent.click(getByText('Save Translation'))
+    
+    const happy1 = getByLabelText("spanishI'm so happy!This is a mocked return of an API call number2es")
+    expect(happy1).toBeInTheDocument();
+
+    fireEvent.click(happy1)
+    expect(translation).not.toBeInTheDocument();
+  })
 })
 
 
