@@ -21,7 +21,7 @@ Upon loading the application, the user is greated with flags representing the la
 
 After selecting a language to translate, the user can select an emoji which will load a list of common phrases associated with that emoji. 
 
-![emoji](https://user-images.githubusercontent.com/58377277/84212450-164bff00-aa7b-11ea-9b83-a0ddb643bd33.gif)
+![Screen-Recording-2020-06-09-at-6](https://user-images.githubusercontent.com/58377277/84213005-c1a98380-aa7c-11ea-89e9-5b4eafec47a7.gif)
 
 If a user wishes to save a translation, the language, original expression/phrase, and the translation will be saved in local storage for later use and review. 
 
