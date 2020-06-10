@@ -3,7 +3,7 @@
 ## EMOJI-GLOT is a translation application for those poly-glots or language learners who want a more exciting translation experience! 
 The application supports 8 different languages, and 9 emojis which each have a list of common expressions associated with the emotion or sentiment that emoji represents. 
 
-![emoji](https://user-images.githubusercontent.com/58377277/84212397-f0bef580-aa7a-11ea-8b9a-7c9b5492738e.gif)
+![emojii](https://user-images.githubusercontent.com/58377277/84212719-d46f8880-aa7b-11ea-9a60-5196b2f18084.gif)
 
 ## Set-Up 
 1. Clone down this Repo
