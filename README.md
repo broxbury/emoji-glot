@@ -17,7 +17,7 @@ EMOJI-GLOT was created using REACT, and utilizes functional components and React
 ## Features 
 Upon loading the application, the user is greated with flags representing the languages spoken or originating from that country. 
 
-![emoji1](https://user-images.githubusercontent.com/58377277/84212434-07654c80-aa7b-11ea-8a7c-206c0339099a.gif)
+![emoj2replace](https://user-images.githubusercontent.com/58377277/84213212-4dbbab00-aa7d-11ea-83f1-b0b04b0213a4.gif)
 
 After selecting a language to translate, the user can select an emoji which will load a list of common phrases associated with that emoji. 
 
