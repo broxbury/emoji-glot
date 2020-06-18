@@ -52,7 +52,7 @@
   border: 0px;
 }
 .advance-btn:hover {
-  opacity: 80%;
+  /* opacity: 80%; */
   border: 2px solid black;
   /* transition-duration: 300ms; */
 }
