@@ -1,0 +1,26 @@
+.emoji-display {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.emoji-title {
+  display: grid;
+  justify-content: center;
+}
+
+.emoji-img {
+  width: 10vw;
+  cursor: pointer;
+}
+
+.emoji-img:hover {
+  opacity: 100%;
+}
+
+.hidden {
+  opacity: 0%;
+}
+
+.emoji-container {
+  transition-duration: 300ms;
+}

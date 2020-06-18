@@ -1,9 +1,6 @@
 .emoji-display {
-  /* margin-top: 10vh; */
-  /* width: 100vw; */
   display: flex;
   justify-content: space-evenly;
-  /* grid-template-columns: repeat(3, 1fr); */
 }
 
 .emoji-title {
@@ -17,8 +14,7 @@
 }
 
 .emoji-img:hover {
-  transition-duration: 200ms;
-  opacity: 80%;
+  opacity: 100%;
 }
 
 .hidden {
