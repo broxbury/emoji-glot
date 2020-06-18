@@ -9,13 +9,13 @@
 }
 
 .emoji-img {
-  width: 5vw;
+  width: 10vw;
   cursor: pointer;
 }
 
-.emoji-img:hover {
+/* .emoji-img:hover {
   opacity: 100%;
-}
+} */
 
 .hidden {
   opacity: 0%;

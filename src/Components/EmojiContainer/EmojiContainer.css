@@ -13,9 +13,9 @@
   cursor: pointer;
 }
 
-.emoji-img:hover {
+/* .emoji-img:hover {
   opacity: 100%;
-}
+} */
 
 .hidden {
   opacity: 0%;
