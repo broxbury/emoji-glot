@@ -1,10 +1,9 @@
+[![Build Status](https://travis-ci.org/broxbury/emoji-glot.svg?branch=master)](https://travis-ci.org/broxbury/emoji-glot)
 # EMOJI-GLOT! 😊 🇪🇸 😲 🇨🇳 😠 🇷🇺 🥰 🇰🇷 😂
 
 ## EMOJI-GLOT is a translation application for those poly-glots or language learners who want a more exciting translation experience! 
 
 ### Deployed App : https://emoji-glot.herokuapp.com/
-
-[![Build Status](https://travis-ci.org/broxbury/emoji-glot.svg?branch=master)](https://travis-ci.org/broxbury/emoji-glot)
 
 The application supports 8 different languages, and 9 emojis which each have a list of common expressions associated with the emotion or sentiment that emoji represents. 
 
