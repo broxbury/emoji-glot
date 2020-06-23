@@ -1,11 +1,15 @@
 # EMOJI-GLOT! 😊 🇪🇸 😲 🇨🇳 😠 🇷🇺 🥰 🇰🇷 😂
 
 ## EMOJI-GLOT is a translation application for those poly-glots or language learners who want a more exciting translation experience! 
+
+### Deployed App : https://emoji-glot.herokuapp.com/
+
 The application supports 8 different languages, and 9 emojis which each have a list of common expressions associated with the emotion or sentiment that emoji represents. 
 
 ![emojii](https://user-images.githubusercontent.com/58377277/84212719-d46f8880-aa7b-11ea-9a60-5196b2f18084.gif)
 
 ## Set-Up 
+
 1. Clone down this Repo
 2. cd into the project directory
 3. Run `npm install` in your terminal
