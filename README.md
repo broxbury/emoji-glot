@@ -4,6 +4,8 @@
 
 ### Deployed App : https://emoji-glot.herokuapp.com/
 
+[![Build Status](https://travis-ci.org/broxbury/emoji-glot.svg?branch=master)](https://travis-ci.org/broxbury/emoji-glot)
+
 The application supports 8 different languages, and 9 emojis which each have a list of common expressions associated with the emotion or sentiment that emoji represents. 
 
 ![emojii](https://user-images.githubusercontent.com/58377277/84212719-d46f8880-aa7b-11ea-9a60-5196b2f18084.gif)
