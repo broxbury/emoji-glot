@@ -1,5 +1,11 @@
 language: node_js
 node_js:
-  - "node"
+- node
 notifications:
-   email: false
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: YntYiWb5UFlHVoblL7XNYfekwjMVMtuxQthJHsKux5Oy0Or7DlTNBqCyn+ZTLP8q04v+kcD2FzY43G6KtYh5kWJFwjpZFtOT9yvLF74pN/TF4iTeCBfEavP3kllX1uoQ8+fcgLp9H4EmWBJsihp6KcwsLBbR3vl7sgZuHX47uSNoLpMN8vrxsEH4uoZvB5g5YDYYl5zi78HZdUue725buh3sHhCUMC4qp4FfR0M8i4Fu8eZjnLgBNrtSdP9q8vsZsKy6C4xCrpTx81X7LqnLAFoJw82HrQcXfBqACfvUDsrIQzcgf4nBK1bfqCI6HGlBZPnwuhg2pf0LP2iBxUuLfI6BaJ04+ZgY0h4s8wn6MnF6KVYk6AIAsELUuhL1O3KO6lbe59Y6jkeAQZfqHjixsskHvM0NoMUFbpgP3WLzh9K89wVxk8gP0HMdzbtOH9OSOXzQLvlcT56Hg1cWoO+1cuYO1sW++G1oBQPtoDVL1WuPAspQMQLtrbEw5Vwe0xpOVwyOIKLxaC/LZ0+5QyPwFKfLSBL7gIgksVAg7oWMllUNsF/Nx2DuEusEC0DOOvU6V+hkBJyFPEL40xNVVw0RqlQAXumvTpqRMyZ8UCUoV7iJfbACwLJgPBbQtUwsfJusyRmWJ4Ip5cFPiI/LWBSQKpESf7k5tthhyLHcstlQ6Ts=
+  app: emoji-glot
+  skip_cleanup: true
